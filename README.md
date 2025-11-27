@@ -10,3 +10,31 @@
 ## Сложность:             Проще в настройке и управлении;           Значительно сложнее.
 ## 
 ## 2. Task
+## Поднятие контейнеров, создание сети и подключение двух контейнеров с MYSQL к ней  
+## [containers](image/repl_scaling_2.1.png)
+## Внутри мастер контейнера нету средств для редактирования, поэтому копируем на локальную машину
+## [cp_config](image/repl_scaling_2.2.png)
+## Изменение файла 
+## [config_changes](image/repl_scaling_2.3.png)
+## Копируем отредактированный файл обратно в контейнер и перезагружаем его
+## [config_changes](image/repl_scaling_2.4_1.png)
+## Внутри слейв контейнера также нету средств редактирования, копируем на локальную машину конфигурационный файл
+## [config_changes](image/repl_scaling_2.4_2.png)
+## Редактирование конфигурационного файла для слейв
+## [config_changes](image/repl_scaling_2.5.png)
+## Копирование файла с локальной машины в слэйв контейнер
+## [config_changes](image/repl_scaling_2.6.png)
+## Вход в мастер контейнер, в СУБД, в ней создание пользователся репликация, выдача прав
+## [config_changes](image/repl_scaling_2.7.png)
+## SHOW BINARY LOG STATUS 
+## [config_changes](image/repl_scaling_2.8.png)
+## В слэйве прописывание ресурс репликации, пользователя и позицию лога
+## [config_changes](image/repl_scaling_2.9.png)
+## Показать статус реплики 
+## [config_changes](image/repl_scaling_2.10.png)
+## На мастере создаем базу данных и показываем таблицы 
+## [config_changes](image/repl_scaling_2.11.png)
+## Добавление информации в таблицу на мастер контейнере
+## [config_changes](image/repl_scaling_2.13.png) 
+## Просмотр на слэйве информации из таблицы
+## [config_changes](image/repl_scaling_2.14.png) 
